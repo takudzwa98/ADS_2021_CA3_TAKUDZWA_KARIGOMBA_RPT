@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Node.h" />
     <ClInclude Include="Q1.h" />
   </ItemGroup>
   <ItemGroup>

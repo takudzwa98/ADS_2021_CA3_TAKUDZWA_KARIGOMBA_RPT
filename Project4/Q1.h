@@ -1,18 +1,52 @@
 #pragma once
 #include <iostream>
+#include "Node.h"
 using namespace std;
+
 template<typename T>
-struct Node
+class BinaryTree
 {
 public:
-    Node<T>* pLeft;
-    Node<T>* pRight;
-    T val;
+    BinaryTree();
+    BinaryTree(int numLevels);
+    void add(T item);
+    ~BinaryTree();
 
-    Node<T>(T val, Node<T>* left = nullptr, Node<T>* right = nullptr)
+        BinaryTree()
+        {
+            root = nullptr;
+            size = 0;
+        }
+
+private:
+    Node<T>* root;
+    int size;
+
+    void insertT(T i, Node<T>* node)
     {
-        this->val = val;
-        pLeft = left;
-        pRight = right;
+        if (i < node->val)
+        {
+            if (node->pLeft != nullptr)
+                insertT(i, node->pLeft);
+            else
+            {
+                node->pLeft = new Node<T>[i];
+                node->pLeft->pLeft = nullptr;
+                node->pLeft->pRight = nullptr;
+            }
+        }
+        else if (i > node->val)
+        {
+            if (node->pRight != nullptr)
+                insertT(i, node->pRight);
+            else
+            {
+                node->pRight = new Node<T>[i];
+                node->pRight->pLeft = nullptr;
+                node->pRight->pRight = nullptr;
+            }
+        }
     }
+ 
+
 };
