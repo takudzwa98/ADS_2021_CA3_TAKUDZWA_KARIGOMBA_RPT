@@ -9,7 +9,7 @@ public:
     Node<T>* pRight;
     T data;
 
-    Node<T>(T data, Node<T>* left, Node<T>* right)
+    Node<T>(T data, Node<T>* left = nullptr, Node<T>* right = nullptr)
     {
         this->data = data;
         pLeft = left;
