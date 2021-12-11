@@ -38,6 +38,31 @@ public:
     {
         display(root);
     }
+    void buildBalanceTree()
+    {
+        vector<Node<T>*> nodes;
+        sortNodeOrder(root, nodes);
+        int n = nodes.size();
+        root = buildBalanceTree(nodes, 0, n - 1);
+    }
+    void sortNodeOrder(Node<T>* root, vector<Node<T>*>& nodes)
+    {
+        if (root == NULL)
+            return;
+        sortNodeOrder(root->pLeft, nodes);
+        nodes.push_back(root);
+        sortNodeOrder(root->pRight, nodes);
+    }
+    Node<T>* buildBalanceTree(vector<Node<T>*>& nodes, int start, int end)
+    {
+        if (start > end)
+            return NULL;
+        int mid = (start + end) / 2;
+        Node<T>* newRoot = nodes[mid];
+        newRoot->pLeft = buildBalanceTreeHelper(nodes, start, mid - 1);
+        newRoot->pRight = buildBalanceTreeHelper(nodes, mid + 1, end);
+        return newRoot;
+    }
 
 private:
     Node<T>* root;
