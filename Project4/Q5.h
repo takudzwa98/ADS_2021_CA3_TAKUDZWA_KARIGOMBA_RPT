@@ -29,21 +29,33 @@ public:
     {
     
     }
+
+   ///code-https://www.codespeedy.com/rat-in-a-maze-problem-in-cpp/ 
     bool canVisit(int x, int y)
     {
-   
+        if (x < 0 || y < 0 || x >= M || y >= N)
+            return false;
+        if (matrix[x][y] == 0 || visited[x][y] == 1)
+            return false;
+        return true;
     }
 
     void readMatrixFile(string filename)
     {
-
+        ifstream input(filename);
+        if (!input.is_open())
+        {
+            cout << "Could not open file" << endl;
+        
+        }
+      
     }
     bool isHasPath()
     {
- 
+        return hasPath;
     }
     int getShortLength()
     {
-
+        return shortLength;
     }
 };
