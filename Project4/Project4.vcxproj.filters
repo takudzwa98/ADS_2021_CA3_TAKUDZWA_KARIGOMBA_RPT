@@ -35,5 +35,8 @@
     <ClCompile Include="Main.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="Q5.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -71,7 +71,7 @@ private:
         if (p != nullptr)
         {
             display(p->pLeft);
-            cout << p->data << ;
+            cout << p->data;
             display(p->pRight);
         }
     }
