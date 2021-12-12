@@ -93,6 +93,7 @@ public:
         input >> M >> N;
         input >> start[0];
         input >> end[1];
+
         for (int i = 0; i < M; i++)
         {
             for (int j = 0; j < N; j++)
