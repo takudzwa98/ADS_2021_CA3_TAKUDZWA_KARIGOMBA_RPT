@@ -24,6 +24,12 @@
     <ClInclude Include="Q2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Q3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Q5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
