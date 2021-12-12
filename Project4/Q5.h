@@ -23,7 +23,18 @@ public:
     }
     ~Maze()
     {
-  
+        if (visited)
+        {
+            for (int i = 0; i < M; i++)
+                delete visited[i];
+            delete visited;
+        }
+        if (matrix)
+        {
+            for (int i = 0; i < M; i++)
+                delete matrix[i];
+            delete matrix;
+        }
     }
     void findPath()
     {
